@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    function fungsi() {
+      var bilangan_1 = document.getElementById("bil_1").value;
+      var bilangan_2 = document.getElementById("bil_2").value;
+
+      var operasi = document.getElementById("operasi").value;
+
+      var hasil = 0;
+      if (operasi == "tambah") {
+        hasil = parseInt(bilangan_1) + parseInt(bilangan_2);
+      } else if (operasi == "kurang") {
+        hasil = parseInt(bilangan_1) - parseInt(bilangan_2);
+      } else if (operasi == "kali") {
+        hasil = parseInt(bilangan_1) * parseInt(bilangan_2);
+      } else {
+        hasil = parseInt(bilangan_1) / parseInt(bilangan_2);
+      }
+      document.getElementById("hasil").innerHTML = hasil;
+    }
+  </script>
+
+  <body>
+    <form action="" method="get" name="" kirim>
+      Bilangan 1 : <input type="text" name="bil_1" id="bil_1" /><br />
+      Bilangan 2 : <input type="text" name="bil_2" id="bil_2" /><br />
+      Operasi :
+      <select name="" id="operasi">
+        <option value="tambah">+</option>
+        <option value="kurang">-</option>
+        <option value="kali">*</option>
+        <option value="bagi">/</option>
+      </select>
+      <input type="button" value="Silahkan Klik" onclick="fungsi()" />
+    </form>
+    <p>hasil operasi adalah : <span id="hasil"></span></p>
+  </body>
+</html>
